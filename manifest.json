@@ -3,5 +3,10 @@
 
   "name": "Table Scraper",
   "version": "0.1.0",
-  "description": "Interactively read tabular data from web pages with repeated elements."
+  "description": "Interactively read tabular data from web pages with repeated elements.",
+
+  "browser_action": {
+    "default_title": "Table Scraper",
+    "default_popup": "popup/index.html"
+  }
 }
