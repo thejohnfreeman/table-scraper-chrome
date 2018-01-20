@@ -11,8 +11,7 @@
     "128": "icons/table.128.png"
   },
 
-  "browser_action": {
-    "default_title": "Table Scraper",
-    "default_popup": "popup/index.html"
+  "background": {
+    "scripts": ["background/index.js"]
   }
 }
