@@ -25,5 +25,8 @@
     "snazzy": "^7.0.0",
     "standard": "^10.0.3",
     "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "rxjs": "^5.5.6"
   }
 }
