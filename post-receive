@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo 'building extension'
+export GIT_DIR="$(readlink --canonicalize "${GIT_DIR}")"
+
+export GIT_WORK_TREE=$(mktemp --directory)
+function cleanup() {
+  rm --recursive --force "${GIT_WORK_TREE}"
+}
+trap cleanup EXIT
+echo "GIT_WORK_TREE='${GIT_WORK_TREE}'"
+
+mkdir --parents "${GIT_WORK_TREE}"
+git checkout --force
+cd "${GIT_WORK_TREE}"
+INSTALL_DIR='/home/jfreeman/shared/table-scraper' make install
