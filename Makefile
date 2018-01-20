@@ -1,4 +1,4 @@
-INSTALL_DIR ?= ~/shared/table-scraper
+INSTALL_DIR ?= /home/jfreeman/shared/table-scraper
 
 install:
-	rsync --archive --delete . $(INSTALL_DIR)
+	GIT_WORK_TREE="$(INSTALL_DIR)" git checkout --force
