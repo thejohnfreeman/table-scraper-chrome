@@ -4,12 +4,17 @@
   "description": "Interactively read tabular data from web pages with repeated elements.",
   "scripts": {
     "build": "webpack",
-    "test": "false"
+    "test": "standard --verbose | snazzy"
+  },
+  "standard": {
+    "globals": ["chrome"]
   },
   "author": "John Freeman <jfreeman08@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "copy-webpack-plugin": "^4.3.1",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3",
     "webpack": "^3.10.0"
   }
 }
