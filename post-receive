@@ -13,4 +13,6 @@ echo "GIT_WORK_TREE='${GIT_WORK_TREE}'"
 mkdir --parents "${GIT_WORK_TREE}"
 git checkout --force
 cd "${GIT_WORK_TREE}"
+yarn
+npm run build
 INSTALL_DIR='/home/jfreeman/shared/table-scraper' make install
