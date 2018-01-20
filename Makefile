@@ -16,5 +16,5 @@ install:
 	# Do not use Git because we want to install without first committing.
 	rsync ${RSYNC_OPTS} build/ "${INSTALL_DIR}"
 
-installing:
-	while true; do rsync --list-only --exclude='/build' ${RSYNC_OPTS} . | rg ${RSYNC_LS_PATTERN} --replace '$$1' | entr -d bash -c 'npm run build && make install'; done
+watch:
+	while true; do rsync --list-only --exclude='/build' ${RSYNC_OPTS} . | rg ${RSYNC_LS_PATTERN} --replace '$$1' | entr -d bash -c 'npm test && npm run build && make install'; done
