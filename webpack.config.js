@@ -29,7 +29,8 @@ module.exports = {
             }]
           ],
           plugins: [
-            'transform-function-bind'
+            'transform-function-bind',
+            'transform-class-properties'
           ]
         }
       }

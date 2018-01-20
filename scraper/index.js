@@ -9,7 +9,7 @@ const $ = ::document.querySelector
 
 chrome.runtime.onMessage.addListener(() => {
   // Called whenever the extension icon is clicked.
-  getScraper().captureMouseOver()
+  getScraper().modeMouseOver()
 })
 
 function getScraper () {
@@ -20,12 +20,37 @@ function getScraper () {
 }
 
 class Scraper {
-  captureMouseOver () {
-    Rx.Observable.fromEvent($('body'), 'mouseover')
+  subMouseOver = null
+
+  modeMouseOver () {
+    if (this.subMouseOver) {
+      return
+    }
+
+    const body = $('body')
+
+    this.subMouseOver = Rx.Observable
+      .fromEvent(body, 'mouseover')
       .throttleTime(500)
       .distinctUntilChanged()
       .subscribe((event) => {
+        // TODO: Update UI with path to target.
         console.log(event.target)
       })
+
+    Rx.Observable
+      .fromEvent(body, 'click', {capture: true})
+      .first()
+      .subscribe((event) => {
+        event.stopPropagation()
+        event.preventDefault()
+        this.modeBranch(event.target)
+      })
+  }
+
+  modeBranch (element) {
+    this.subMouseOver.unsubscribe()
+    this.subMouseOver = null
+    console.log(element)
   }
 }
