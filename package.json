@@ -1,0 +1,10 @@
+{
+  "name": "table-scraper-chrome",
+  "version": "0.1.0",
+  "description": "Interactively read tabular data from web pages with repeated elements.",
+  "scripts": {
+    "test": "false"
+  },
+  "author": "John Freeman <jfreeman08@gmail.com>",
+  "license": "MIT"
+}
