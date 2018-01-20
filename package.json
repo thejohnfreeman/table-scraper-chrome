@@ -9,7 +9,8 @@
   "standard": {
     "parser": "babel-eslint",
     "globals": [
-      "chrome"
+      "chrome",
+      "document"
     ]
   },
   "author": "John Freeman <jfreeman08@gmail.com>",

@@ -1,3 +1,4 @@
 chrome.browserAction.onClicked.addListener((tab) => {
-  chrome.tabs.sendMessage(tab.id, {greeting: 'Hello'})
+  // Called whenever the extension icon is clicked.
+  chrome.tabs.sendMessage(tab.id, {})
 })
