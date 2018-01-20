@@ -12,7 +12,8 @@
   },
 
   "background": {
-    "scripts": ["background/index.js"]
+    "scripts": ["background/index.js"],
+    "persistent": false
   },
 
   "browser_action": {
